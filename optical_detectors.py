@@ -3,17 +3,18 @@
 optical_detectors.py
 
 Description:
-    This script will produce an HR diagram using images from 2 filters as inputs. 
+    This script will produce a catalog of stars found acroos images in two filters, an HR diagram, and information about the star finding
 
 Usage:
     Run the script from command line and optionally pass the following arguments:
-    1. file path to teh F336W images
+    1. file path to the F336W images
     2. file path to the F555W images
 
 Output:
     1. HR diagram of the target made with the inputted images
-    2. historgrams of the FHWM of detected sources for each filter
-    3. printed information: number of peaks dtected, number of peaks counted as sources, number of peaks thrown out
+    2. Catalog of stars found: coordinates, aperture used, and for both filters: flux, aparent mag, absolute mag
+    3. historgrams of the FHWM of detected sources for each filter
+    4. printed information: number of peaks dtected, number of peaks counted as sources, number of peaks thrown out
 """
 import argparse
 from astropy.io import fits
@@ -417,3 +418,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     main(args.F336W_path, args.F555W_path)
+
