@@ -6,7 +6,14 @@ if paths are not specified the script should assume they are in the "data" folde
 
 # What the script will do
 
-Using data from the F336W and F555W filter images, this script will combine  will create a catalog of stars with shared coordinates across both 
+Using data from the F336W and F555W filter images, this script will median-combine each set of filter images to one per filter. This will get rid of (most) any cosmic rays. 
+Then peaks are detected in one image and catagorized as stars or not (passing or failing checks). The list of peak coordinates is checked in the second image, then a final catalog of stars is produced of sources that look like stars at the same coordinates in both images.
+
+Photometery is performed to get the fluxes, aparent magnitudees, and absolute magnitues of the stars.
+
+An HR diagram is made of M(F336 - F555) by MF336 for units of both apparent and absolute magnitude. 
+
+Histograms of the FWHM of detected peaks are also made. 
 
 # Contents:
 1. "data/" includes the folders F336W and F555W which include 3 fits files of images taken in theose respective filters (taken from brightspace).
@@ -19,5 +26,3 @@ Using data from the F336W and F555W filter images, this script will combine  wil
 When I run my script, I get a warning that says covarience could not be estimated at some point, but the code does then run 
 (For context, this may be happening when I could not get a good gaussian fit for a peak, and in that case the code should just add it to a list of non-stars and move on). 
 Hopefully that means that it will also run when anyone else uses it on their terminal. 
-
-My catalog is also not printing out all the collumns in the terminal sadly, so I will include a csv version of it in the .zip file with my results incase that is necessary. 
