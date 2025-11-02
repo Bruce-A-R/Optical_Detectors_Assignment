@@ -1,6 +1,10 @@
 # Optical_Detectors_Assignment
 This repository is my optical detectors assignment.
 
+When the script optical_detectors.py is run, please add arguments for the path to folders F336W and F555W. If you choose not to though it's okay. 
+If paths are not specified the script should assume they are in the "data" folder of this github, and they are. 
+
+
 Contents:
 1. "data" includes the folders F336W and F555W which include 3 fits files of images taken in theose respective filters (taken from brightspace).
 2. optical_detectors.py: the script that will do the assignment
@@ -10,5 +14,5 @@ Contents:
 Notes:
 
 When I run my script, I get an error that says covarience could not be estimated at some point, but the code does then run 
-(For context, this may ne happening when I could not get a good gaussian fit for a peak, and in that case the code should just add it to a list of non-stars and move on). 
+(For context, this may be happening when I could not get a good gaussian fit for a peak, and in that case the code should just add it to a list of non-stars and move on). 
 Hopefully that means that it will also run when anyone else uses it on their terminal. 
