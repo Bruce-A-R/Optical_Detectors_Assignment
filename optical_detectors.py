@@ -413,9 +413,10 @@ def main(F336W_path, F555W_path):
 if __name__ == '__main__': 
     parser = argparse.ArgumentParser(description='''This script will print out an HR diagram and two historgram sublots of FHWM
     of peaks detected, along with text information about the peaks found''')
-    parser.add_argument('F336W_path', type = str, help = "path to the folder with F336W files", default = None)
-    parser.add_argument('F555W_path', type = str, help = "path to the folder with F555W files", default = None)
+    parser.add_argument('F336W_path', type = str, help = "path to the folder with F336W files", nargs = '?', default = None)
+    parser.add_argument('F555W_path', type = str, help = "path to the folder with F555W files", nargs = '?', default = None)
     args = parser.parse_args()
 
     main(args.F336W_path, args.F555W_path)
+
 
